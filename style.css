@@ -1,0 +1,173 @@
+/* Sử dụng font đẹp cho tiêu đề */
+body {
+    font-family: 'Arial', sans-serif;
+    /* Background Lộng Lẫy */
+    background: radial-gradient(circle at center, #ffccd5 0%, #ff80a0 100%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden; /* Ngăn cuộn trang */
+}
+
+.apology-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Màu trắng trong suốt nhẹ */
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(255, 255, 255, 0.5); /* Đổ bóng sâu và viền sáng */
+    max-width: 600px;
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive; /* Font chữ viết tay lãng mạn */
+    color: #880e4f; /* Màu tím hồng đậm */
+    font-size: 3em;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px #f8bbd0;
+}
+
+p {
+    color: #4a4a4a;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+.main-message {
+    font-weight: bold;
+    color: #c2185b; /* Hồng sẫm */
+}
+
+#confessBtn {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    margin: 30px 0;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0 8px #d32f2f; /* Tạo hiệu ứng nút 3D */
+    transition: all 0.2s ease;
+    font-weight: 900;
+}
+
+#confessBtn:hover {
+    background-color: #d32f2f;
+    box-shadow: 0 4px #b71c1c;
+    transform: translateY(4px); /* Nút lún xuống khi hover */
+}
+
+.closing-love-note {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #ff1744;
+    animation: heartbeat 1.5s infinite; /* Hiệu ứng trái tim đập */
+}
+
+/* HIỆU ỨNG TRÁI TIM NỔI */
+.floating-heart {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3em;
+    color: #ff4081;
+    animation: floatHeart 4s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+    0% { transform: translate(-50%, 0) scale(1); opacity: 0.8; }
+    50% { transform: translate(-50%, -10px) scale(1.05); opacity: 1; }
+    100% { transform: translate(-50%, 0) scale(1); opacity: 0.8; }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* --- MODAL (POPUP) LỘNG LẪY --- */
+.modal {
+    display: none; /* Ẩn ban đầu */
+    position: fixed;
+    z-index: 20; /* Luôn nằm trên cùng */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Nền tối mờ */
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fff8e1; /* Màu kem nhẹ */
+    margin: 15% auto;
+    padding: 40px;
+    border: 5px solid #ffab91; /* Viền màu ấm áp */
+    width: 80%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.5s;
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.confession-text h2 {
+    color: #d81b60;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em;
+}
+
+.romantic-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.signature {
+    font-style: italic;
+    margin-top: 20px;
+    color: #3f51b5;
+}
+
+.close-btn, .close-btn-modal {
+    color: #ff1744;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover, .close-btn-modal:hover {
+    color: #c51162;
+}
+
+.close-btn-modal {
+    float: none;
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50; /* Màu xanh lá cây - Tha thứ */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px #388E3C;
+}
+
+.close-btn-modal:hover {
+    background-color: #388E3C;
+}
